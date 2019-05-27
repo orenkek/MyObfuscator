@@ -1,0 +1,32 @@
+﻿<Window x:Name="Obfuscator" x:Class="Obfuscate.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Obfuscate"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="900" ResizeMode="NoResize" Background="LightGray">
+    <DockPanel LastChildFill="True">
+        <Border DockPanel.Dock="Top" BorderBrush="Gray" BorderThickness="2" >
+            <StackPanel Orientation="Horizontal">
+                <StackPanel>
+                    <Button x:Name="btnBrowse" Width="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="BtnBrowse_Click_1"></Button>
+                    <TextBlock HorizontalAlignment="Center"></TextBlock>
+                    <Button x:Name="btnObfuscate" Margin="5" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="BtnObfuscate_Click_1"></Button>
+                </StackPanel>
+                <TextBox x:Name="tbxProcesses" HorizontalAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" VerticalAlignment="Stretch" Width="750" Height="100" IsReadOnly="True"></TextBox>
+            </StackPanel>
+        </Border>
+        <StackPanel HorizontalAlignment="Stretch">
+            <TextBlock Margin="5">Исходный код</TextBlock>
+            <TextBox x:Name="tbxCode" Margin="5" HorizontalAlignment="Stretch" Height="130" IsReadOnly="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto"></TextBox>
+            <TextBlock Margin="5">Обфусрированный код</TextBlock>
+            <TextBox x:Name="tbxObfuscatedCode" Margin="5" HorizontalAlignment="Stretch" Height="130" IsReadOnly="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto"></TextBox>
+            <Border VerticalAlignment="Center">
+                <StackPanel VerticalAlignment="Center">
+                    <Button HorizontalAlignment="Right" Width="100" Height="25" VerticalAlignment="Center" Margin="20,15,50,10" Click="Button_Click">Сохранить</Button>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </DockPanel>
+</Window>

@@ -1,0 +1,15 @@
+C:\Users\Anuar\source\repos\Obfuscator\Obfuscate\bin\Debug\Obfuscate.exe.config
+C:\Users\Anuar\source\repos\Obfuscator\Obfuscate\bin\Debug\Obfuscate.exe
+C:\Users\Anuar\source\repos\Obfuscator\Obfuscate\bin\Debug\Obfuscate.pdb
+C:\Users\Anuar\source\repos\Obfuscator\Obfuscate\obj\Debug\Obfuscate.csprojAssemblyReference.cache
+C:\Users\Anuar\source\repos\Obfuscator\Obfuscate\obj\Debug\MainWindow.g.cs
+C:\Users\Anuar\source\repos\Obfuscator\Obfuscate\obj\Debug\App.g.cs
+C:\Users\Anuar\source\repos\Obfuscator\Obfuscate\obj\Debug\Obfuscate_MarkupCompile.cache
+C:\Users\Anuar\source\repos\Obfuscator\Obfuscate\obj\Debug\Obfuscate_MarkupCompile.lref
+C:\Users\Anuar\source\repos\Obfuscator\Obfuscate\obj\Debug\MainWindow.baml
+C:\Users\Anuar\source\repos\Obfuscator\Obfuscate\obj\Debug\Obfuscate.g.resources
+C:\Users\Anuar\source\repos\Obfuscator\Obfuscate\obj\Debug\Obfuscate.Properties.Resources.resources
+C:\Users\Anuar\source\repos\Obfuscator\Obfuscate\obj\Debug\Obfuscate.csproj.GenerateResource.cache
+C:\Users\Anuar\source\repos\Obfuscator\Obfuscate\obj\Debug\Obfuscate.csproj.CoreCompileInputs.cache
+C:\Users\Anuar\source\repos\Obfuscator\Obfuscate\obj\Debug\Obfuscate.exe
+C:\Users\Anuar\source\repos\Obfuscator\Obfuscate\obj\Debug\Obfuscate.pdb
