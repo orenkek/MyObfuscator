@@ -10,9 +10,9 @@
         <Border DockPanel.Dock="Top" BorderBrush="Gray" BorderThickness="2" >
             <StackPanel Orientation="Horizontal">
                 <StackPanel>
-                    <Button x:Name="btnBrowse" Width="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="BtnBrowse_Click_1"></Button>
-                    <TextBlock HorizontalAlignment="Center"></TextBlock>
-                    <Button x:Name="btnObfuscate" Margin="5" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="BtnObfuscate_Click_1"></Button>
+                    <Button x:Name="btnBrowse" Margin="5" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="BtnBrowse_Click"></Button>
+                    <TextBlock HorizontalAlignment="Center" Margin="5">Для начала выберите файл</TextBlock>
+                    <Button x:Name="btnObfuscate" Margin="5" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="BtnObfuscate_Click"></Button>
                 </StackPanel>
                 <TextBox x:Name="tbxProcesses" HorizontalAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" VerticalAlignment="Stretch" Width="750" Height="100" IsReadOnly="True"></TextBox>
             </StackPanel>
@@ -20,11 +20,11 @@
         <StackPanel HorizontalAlignment="Stretch">
             <TextBlock Margin="5">Исходный код</TextBlock>
             <TextBox x:Name="tbxCode" Margin="5" HorizontalAlignment="Stretch" Height="130" IsReadOnly="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto"></TextBox>
-            <TextBlock Margin="5">Обфусрированный код</TextBlock>
+            <TextBlock Margin="5">Обфусцированный код</TextBlock>
             <TextBox x:Name="tbxObfuscatedCode" Margin="5" HorizontalAlignment="Stretch" Height="130" IsReadOnly="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto"></TextBox>
             <Border VerticalAlignment="Center">
                 <StackPanel VerticalAlignment="Center">
-                    <Button HorizontalAlignment="Right" Width="100" Height="25" VerticalAlignment="Center" Margin="20,15,50,10" Click="Button_Click">Сохранить</Button>
+                    <Button x:Name="btnSave" HorizontalAlignment="Right" Width="100" Height="25" VerticalAlignment="Center" Margin="20,15,50,10" Click="BtnSave_Click">Сохранить</Button>
                 </StackPanel>
             </Border>
         </StackPanel>

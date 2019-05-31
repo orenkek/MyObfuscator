@@ -22,21 +22,20 @@ namespace Obfuscate
     /// </summary>
     public partial class MainWindow : Window
     {
+        // Инициализируем OpenFileDialog позволяющий открывать файлы
         Microsoft.Win32.OpenFileDialog dlg;
-        string progInfo;
-        string obInfo;
+        // Переменная типа bool, указывающая на то, что файл выбран/отмена выбора/не был выбран
         bool? ifFilesSelected;
 
         public MainWindow()
         {
             InitializeComponent();
+            // Инициализируем элемент OpenFileDialog
             dlg = new Microsoft.Win32.OpenFileDialog();
+            // Указываем расширание нужное для файла
             dlg.DefaultExt = ".cs";
+            // Указываем фильтр для выбора файлов
             dlg.Filter = "File with code (.cs)|*.cs";
-
-            StreamReader sr = new StreamReader("ProgInfo.txt");
-            obInfo = sr.ReadToEnd();
-            sr.Close();
             StackPanel sp = new StackPanel();
             sp.Orientation = Orientation.Horizontal;
             Image img = new Image();
@@ -66,18 +65,13 @@ namespace Obfuscate
             butt.Children.Add(tblText);
             btnObfuscate.Content = butt;
         }
-
-        private void BtnObfuscate_Click(object sender, RoutedEventArgs e)
-        {
-            StreamReader sr;
-            StringBuilder code = new StringBuilder();
-        }
+        // Функция, указывающая на ошибку в процессе выполнения программы
         public static void ShowExceptionMessageBox()
         {
             MessageBox.Show("Ошибка, неверные данные", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Exclamation, MessageBoxResult.Cancel);
         }
-
-        private void BtnBrowse_Click_1(object sender, RoutedEventArgs e)
+        // Обработчик события нажатия на кнопку "Обзор"
+        private void BtnBrowse_Click(object sender, RoutedEventArgs e)
         {
             ifFilesSelected = dlg.ShowDialog();
             if (ifFilesSelected == true)
@@ -91,8 +85,8 @@ namespace Obfuscate
                 sr.Close();
             }
         }
-
-        private void BtnObfuscate_Click_1(object sender, RoutedEventArgs e)
+        // Обработчик события на кнопку "Обфусцировать"
+        private void BtnObfuscate_Click(object sender, RoutedEventArgs e)
         {
             StreamReader SR;
             StringBuilder Code = new StringBuilder();
@@ -109,22 +103,29 @@ namespace Obfuscate
                     Code.Append(SR.ReadToEnd().ToString());
                 }
             }
-
+            // Создает элемент библиотеки obfuscator_lib для послежующей обфускации
             Obfuscate.obfuscator_lib OC = new Obfuscate.obfuscator_lib(Code);
             StringBuilder sb = new StringBuilder();
+            // Заполняем StringBuilder обфусцированным кодом программы 
             sb.Append(OC.GetObfuscatedCode());
             tbxObfuscatedCode.Text = sb.ToString();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
-            Microsoft.Win32.SaveFileDialog sfd = new Microsoft.Win32.SaveFileDialog();
-            sfd.DefaultExt = ".cs";
-            sfd.Filter = "File with code (.cs)|*.cs";
-            sfd.InitialDirectory = @"c:\";
-            if (sfd.ShowDialog() == true)
-                File.WriteAllText(sfd.FileName, tbxObfuscatedCode.Text);
-
+            if (ifFilesSelected == true)
+            {
+                Microsoft.Win32.SaveFileDialog sfd = new Microsoft.Win32.SaveFileDialog();
+                sfd.DefaultExt = ".cs";
+                sfd.Filter = "File with code (.cs)|*.cs";
+                sfd.InitialDirectory = @"c:\";
+                if (sfd.ShowDialog() == true)
+                    File.WriteAllText(sfd.FileName, tbxObfuscatedCode.Text);
+            }
+            else
+            {
+                ShowExceptionMessageBox();
+            }
         }
     }
 }
